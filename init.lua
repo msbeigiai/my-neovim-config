@@ -111,13 +111,19 @@ require('lualine').setup {
 
 -- NvimTree
 require('nvim-tree').setup {
-  view = {
-    width = 30,
-    side = 'left',
-  },
-  filters = {
-    dotfiles = false,
-  },
+  -- view = {
+  --   width = 30,
+  --   side = 'left',
+  --   mappings = {
+  --     list = {
+  --       { key = "s", action = "vsplit"},
+  --       { key = "i", action = "split"}
+  --     },
+  --   },
+  -- },
+  -- filters = {
+  --   dotfiles = false,
+  -- },
 }
 vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
