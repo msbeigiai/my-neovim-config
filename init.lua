@@ -34,6 +34,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'                  
   use 'saadparwaiz1/cmp_luasnip'            
   use 'L3MON4D3/LuaSnip'                    
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- Scala (Metals)
   use { 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } }
@@ -98,7 +99,9 @@ require('packer').startup(function(use)
 end)
 
 -- Colorscheme
-vim.cmd [[colorscheme gruvbox]]
+-- vim.cmd [[colorscheme vim]]
+-- colorscheme catppuccin " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+vim.cmd.colorscheme "catppuccin"
 
 -- Lualine
 require('lualine').setup {
@@ -221,7 +224,8 @@ local on_attach = function(client, bufnr)
 -- Jump between words in insert mode
   vim.api.nvim_set_keymap('i', '<C-b>', '<C-o>b', { noremap = true })
   vim.api.nvim_set_keymap('i', '<C-w>', '<C-o>w', { noremap = true })
-
+  -- vim.api.nvim_set_keymap('i', '<CR>', '<Esc>A<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('i', '<C-o>', '<Esc>o', { noremap = true, silent = true })
 
 
 end
